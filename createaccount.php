@@ -33,7 +33,7 @@ try {
         // Insérer l'utilisateur
         $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
         if ($stmt->execute([$username, $passwordHash])) {
-            echo "Compte créé avec succès ! <a href='formulaire.html'>Se connecter</a>";
+            echo "Compte créé avec succès ! <a href='index.html'>Se connecter</a>";
         } else {
             echo "Erreur lors de la création du compte.";
         }
