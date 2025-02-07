@@ -11,7 +11,7 @@ lancer crate_db.php pour créer la base de données, ensuite ouvrez formulaire.h
 # create_db.php
 pour crée la base de données nommée connect et une table users avec 3  attribut id, username, password
 
-# formulaire.html
+# index.html
 page de connexion avec une formulaire comportant :
 log de p8, deux champs (identifiant et mot de passe), 2 button (reset et connexion) et un lien href pour crée un nouveau compte (se redirige vers newaccount.html)
 
