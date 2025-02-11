@@ -36,6 +36,21 @@ try {
             die("Erreur : Identifiant déjà utilisé.");
         }
 
+        if (strlen($password) < 10) {
+            die("Le mot de passe doit contenir au moins 10 caractères.");
+        }
+        
+        // Vérifier si le mot de passe contient des majuscules, des chiffres et des caractères spéciaux
+        if (!preg_match('/[A-Z]/', $password)) {
+            die("Le mot de passe doit contenir au moins une majuscule.");
+        }
+        if (!preg_match('/[0-9]/', $password)) {
+            die("Le mot de passe doit contenir au moins un chiffre.");
+        }
+        if (!preg_match('/[\W_]/', $password)) {
+            die("Le mot de passe doit contenir au moins un caractère spécial.");
+        }
+        
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
         $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
